@@ -1,12 +1,12 @@
 server:
   port: ${random.int[10000,19999]}
 
-# ×¢²áÖĞĞÄÅäÖÃ
+# æ³¨å†Œä¸­å¿ƒé…ç½®
 regCenter:
   serverList: 192.168.199.123:2181
   namespace: elastic-job-springboot
 
-# ÊÂ¼ş×·×ÙÊı¾İÔ´£¬´æ·ÅÈÎÎñÖ´ĞĞÊ±¼ä£¬×´Ì¬µÈĞÅÏ¢
+# äº‹ä»¶è¿½è¸ªæ•°æ®æºï¼Œå­˜æ”¾ä»»åŠ¡æ‰§è¡Œæ—¶é—´ï¼ŒçŠ¶æ€ç­‰ä¿¡æ¯
 elasticjob:
   datasource:
     driver: com.mysql.cj.jdbc.Driver
@@ -16,9 +16,9 @@ elasticjob:
 
 
 heling:
-  # ¶¨ÒåÒ»¸öSimpleJob
+  # å®šä¹‰ä¸€ä¸ªSimpleJob
   simpleJob:
     cron: 0/5 * * * * ?
-    shardingTotalCount: 2 #·ÖÆ¬Êı
+    shardingTotalCount: 2 #åˆ†ç‰‡æ•°
     shardingItemParameters:
     jobParameter:
