@@ -1,0 +1,24 @@
+server:
+  port: ${random.int[10000,19999]}
+
+# 注册中心配置
+regCenter:
+  serverList: 192.168.199.123:2181
+  namespace: elastic-job-springboot
+
+# 事件追踪数据源，存放任务执行时间，状态等信息
+elasticjob:
+  datasource:
+    driver: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-uf6a2ll88vlt359t5no.mysql.rds.aliyuncs.com:3306/elastic_job_log
+    username: root
+    password: Wang123456
+
+
+heling:
+  # 定义一个SimpleJob
+  simpleJob:
+    cron: 0/5 * * * * ?
+    shardingTotalCount: 2 #分片数
+    shardingItemParameters:
+    jobParameter:
