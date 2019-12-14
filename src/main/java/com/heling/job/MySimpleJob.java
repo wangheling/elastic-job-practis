@@ -19,6 +19,9 @@ public class MySimpleJob implements SimpleJob {
 
         int shardingItem = shardingContext.getShardingItem();
 
+        /**
+         * 启动两台服务，id被2整除的的执行case 0，id被2不能整除的执行case 1，如果停止一台，则任务全部在另一台上执行，失效转移
+         */
         switch (shardingItem) {
             case 0:
                 log.info(shardingContext.getJobName() + "处理数据select * from xx where mod(id,2) = 0");
